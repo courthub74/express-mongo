@@ -83,29 +83,35 @@ let teamSchema = mongoose.Schema({
 let TeamModel = mongoose.model("Team", teamSchema)
 
 //instantiate the model
-let team5 = new TeamModel({name: "trailblazers", location: "portland", yearformed: "1979"})
-let team6 = new TeamModel({name: "pistons", location: "detroit", yearformed: "1941"})
-let team7 = new TeamModel({name: "lakers", location: "los angeles", yearformed: "1965"})
+// let team5 = new TeamModel({name: "trailblazers", location: "portland", yearformed: "1979"})
+// let team6 = new TeamModel({name: "pistons", location: "detroit", yearformed: "1941"})
+// let team7 = new TeamModel({name: "lakers", location: "los angeles", yearformed: "1965"})
 
 
 //NOW save the data (instantiations)
-team5.save(function(err, team) {
-    if (err) { return console.error(err) }
-    console.log(team.name + " saved to nba2 teams")
-});
+// team5.save(function(err, team) {
+//     if (err) { return console.error(err) }
+//     console.log(team.name + " saved to nba2 teams")
+// });
 
-team6.save(function(err, team) {
-    if (err) { return console.error(err) }
-    console.log(team.name + " saved to nba2 teams")
-});
+// team6.save(function(err, team) {
+//     if (err) { return console.error(err) }
+//     console.log(team.name + " saved to nba2 teams")
+// });
 
-team7.save(function(err, team) {
-    if (err) { return console.error(err) }
-    console.log(team.name + " saved to nba2 teams")
-});
+// team7.save(function(err, team) {
+//     if (err) { return console.error(err) }
+//     console.log(team.name + " saved to nba2 teams")
+// });
 
 // use model to find and read data
 TeamModel.find({ name: "pistons" }).then(teams => {
     console.log(teams)
-})
+});
+TeamModel.find({ name: "bulls" }).then(teams => {
+    console.log(teams)
+});
+TeamModel.find({ name: "trailblazers" }).then(teams => {
+    console.log(teams)
+});
 
