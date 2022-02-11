@@ -17,6 +17,17 @@ app.get("/", (req, res) => {
 
 })
 
+//post route to post to the database
+app.post('/', (req, res) => {
+    res.status(200)
+
+    if (req.body.name) {
+        res.render('team', { message: "Successfully posted new team"});
+    } else {
+        res.render('team');
+    }
+})
+
 //make servern run pass through port #
 app.listen(3000)
 
