@@ -11,40 +11,41 @@
     <h1>This is the Day, (<%= text %>)</h1>
 
 
-    <form method="POST">
+    <form method="POST" action="/" enctype="multipart/form-data">
         <div>
 
             <!--Team Name-->
-            <label htmlFor="name">Team Name</label>
+            <label >Team Name</label>
             <input type="text" id="name" placeholder="enter the mascot" name="name" />
+            <button type="submit">Submit to NBA3 Database</button>
 
         </div>
 
         <br>
 
-        <div>
+        <!-- <div> -->
 
             <!--Team City-->
-            <label htmlFor="name">Team City</label>
+            <!-- <label>Team City</label>
             <input type="text" id="city" placeholder="enter the city" name="city" />
 
-        </div>
+        </div> -->
 
         <br>
 
-        <div>
+        <!-- <div> -->
         
             <!--Team Start-->
-            <label htmlFor="name">Year Formed</label>
+            <!-- <label htmlFor="name">Year Formed</label>
             <input type="text" id="year" placeholder="enter the year formed" name="year" />
 
         </div>
 
-        <br>
+        <br> -->
 
-        <div>
-            <button onclick="submit">Submit to NBA2 Database</button>
-        </div>
+        <!-- <div>
+            <button type="submit">Submit to NBA3 Database</button>
+        </div> -->
     </form>
     
 </body>

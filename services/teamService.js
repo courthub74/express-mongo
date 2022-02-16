@@ -1,4 +1,6 @@
-const Team = require('../models/Team')
+const Team = require('../models/team')
+
+//actually saves the team to the schema
 
 //CREATE FUNCTION
 async function create(data) {

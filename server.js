@@ -3,8 +3,12 @@
 //Require express library that was downloaded
 const express = require("express")
 
+
 //set up the server with app variable calling express as a function
 const app = express()
+
+//Require teamService
+const teamService = require('./services/teamService')
 
 //for assigning ejs
 app.set('view engine', 'ejs')
@@ -20,6 +24,8 @@ app.get("/", (req, res) => {
 //post route to post to the database
 app.post('/', (req, res) => {
     res.status(200)
+    const { name } = req.body;
+    console.log(req.body.name)
 
     if (req.body.name) {
         res.render('team', { message: "Successfully posted new team"});
@@ -76,7 +82,7 @@ const mongoose = require('mongoose');
 
 // " in a more advanced way
     //create connectionStr
-const connectionStr = "mongodb://localhost:27017/nba2db"
+const connectionStr = "mongodb://localhost:27017/nba3db"
 // connect to the database
 mongoose.connect(connectionStr).then(() => {
     console.log('Database Connected')
@@ -90,7 +96,7 @@ let teamSchema = mongoose.Schema({
     yearformed: String,
 })
 
-// creating the model a controller for collection inside the database
+// creating the model. a controller for collection inside the database
 let TeamModel = mongoose.model("Team", teamSchema)
 
 //instantiate the model
@@ -116,13 +122,13 @@ let TeamModel = mongoose.model("Team", teamSchema)
 // });
 
 // use model to find and read data
-TeamModel.find({ name: "pistons" }).then(teams => {
-    console.log(teams)
-});
-TeamModel.find({ name: "bulls" }).then(teams => {
-    console.log(teams)
-});
-TeamModel.find({ name: "trailblazers" }).then(teams => {
-    console.log(teams)
-});
+// TeamModel.find({ name: "pistons" }).then(teams => {
+//     console.log(teams)
+// });
+// TeamModel.find({ name: "bulls" }).then(teams => {
+//     console.log(teams)
+// });
+// TeamModel.find({ name: "trailblazers" }).then(teams => {
+//     console.log(teams)
+// });
 
